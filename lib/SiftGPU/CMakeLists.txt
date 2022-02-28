@@ -3,6 +3,7 @@ if(NOT IS_MSVC)
 endif()
 
 add_definitions("-DSIFTGPU_NO_DEVIL")
+add_definitions("-DGLEW_NO_GLU")
 
 set(SIFT_GPU_SOURCE_FILES
     FrameBufferObject.cpp
@@ -49,6 +50,7 @@ endif()
 target_link_libraries(sift_gpu
     ${SIFT_GPU_LIBRARIES}
     ${GLEW_LIBRARIES}
-    ${OPENGL_gl_LIBRARY}
-    ${OPENGL_glu_LIBRARY}
+    ${OPENGL_LIBRARIES}
+    # ${OPENGL_gl_LIBRARY}
+    # ${OPENGL_glu_LIBRARY}
 )
