@@ -334,7 +334,7 @@ def build_gflags(args):
     shutil.move(os.path.join(args.build_path, "gflags-2.2.2"), path)
     os.remove(os.path.join(path, "BUILD"))
 
-    build_cmake_project(args, os.path.join(path, "__build__"))
+    build_cmake_project(args, os.path.join(path, "__build__"), ['-DBUILD_SHARED_LIBS=ON'])
 
 
 def build_glog(args):
