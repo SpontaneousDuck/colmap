@@ -334,7 +334,7 @@ def build_gflags(args):
     shutil.move(os.path.join(args.build_path, "gflags-2.2.2"), path)
     os.remove(os.path.join(path, "BUILD"))
 
-    build_cmake_project(args, os.path.join(path, "__build__"))
+    build_cmake_project(args, os.path.join(path, "__build__"), ['-DBUILD_SHARED_LIBS=ON'])
 
 
 def build_glog(args):
@@ -348,7 +348,7 @@ def build_glog(args):
                      "454766d0124951091c95bad33dafeacd")
     shutil.move(os.path.join(args.build_path, "glog-0.3.5"), path)
 
-    build_cmake_project(args, os.path.join(path, "__build__"), ['-DBUILD_SHARED_LIBS=ON'])
+    build_cmake_project(args, os.path.join(path, "__build__"))
 
 
 def build_suite_sparse(args):
